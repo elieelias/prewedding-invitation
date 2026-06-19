@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FCFAF6; /* Luxury Cream */
+  --foreground: #1E5669; /* Deep Navy Teal */
+}
+
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-serif), Georgia, ui-serif, serif;
+  --font-script: var(--font-script), cursive;
+
+  /* Theme Colors */
+  --color-teal-dark: #1E5669;
+  --color-teal-light: #4CB2D4;
+  --color-gold: #C2A677;
+  --color-gold-pale: #DBC8A9;
+  --color-mint-bg: #F2F8F9;
+  --color-cream: #FCFAF6;
+
+  /* Custom Animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-sway-left: swayLeft 8s ease-in-out infinite;
+  --animate-sway-right: swayRight 7s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-sparkle: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Custom Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes swayLeft {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(-3deg); }
+}
+
+@keyframes swayRight {
+  0%, 100% { transform: rotate(4deg); }
+  50% { transform: rotate(6deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C2A677 0%, #E6D0AA 50%, #C2A677 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #C2A677 0%, #E6D0AA 50%, #C2A677 100%);
+}
+
+.gold-border-fancy {
+  border: 1px solid rgba(194, 166, 119, 0.3);
+  position: relative;
+}
+
+.gold-border-fancy::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(194, 166, 119, 0.15);
+  pointer-events: none;
+}
