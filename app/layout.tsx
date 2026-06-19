@@ -20,7 +20,12 @@ export const metadata = {
   description: 'You are cordially invited!',
 };
 
-export default function RootLayout({ children }) {
+// Added strict type definition inline for the children prop
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${greatVibes.variable}`}>
       <body>{children}</body>
